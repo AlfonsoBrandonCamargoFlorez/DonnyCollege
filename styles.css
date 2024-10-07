@@ -1,95 +1,46 @@
-/* styles.css */
 body {
     text-align: center;
-    
-    
-
+    background-color: rgb(127, 148, 166); /* Cambia esto al color que prefieras */
 }
-
 
 header {
-    background: #333;
-    color: aliceblue;
-    
-    
+    z-index: 1030; /* Asegura que el encabezado esté por encima del contenido */
 }
 
-.hero {
-    position: relative;
-    text-align: center;
-    color: #fff;
-
-    overflow: hidden;
-}
-
-.carousel {
-    position: relative;
-    width: 100vw;
-    height: 93vh;
-    overflow: hidden;
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.carousel-item img {
     width: 100%;
-    height: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 90vh; /* Establece una altura máxima para el carrusel */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortes */
 }
 
-.carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-    text-align: center;
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.347); /* Fondo oscuro con transparencia */
+    padding: 25px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    position: absolute; /* Asegura que se posicione correctamente */
+    left: 50%; /* Centra el fondo */
+    transform: translateX(-50%); /* Ajusta la posición */
+    width: 60%; /* Asegúrate de que sea del ancho deseado */
+    bottom: 150px; /* Ajusta este valor para mover el texto hacia arriba */
 }
 
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.carousel-caption h5 {
+    font-size: 2rem; /* Tamaño de la letra del título */
 }
 
-.carousel-text {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-}
-
-.carousel-text h2 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.carousel-text p {
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-.carousel-buttons {
-    margin-top: 10px;
+.carousel-caption p {
+    font-size: 1.25rem; /* Tamaño de la letra del párrafo */
 }
 
 .btn {
-    display: inline-block;
     margin: 0 5px;
     padding: 10px 20px;
     font-size: 1rem;
-    text-decoration: none;
     color: #fff;
     background: #333;
     border-radius: 5px;
     transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #555;
 }
 
 .info-btn {
@@ -108,45 +59,18 @@ header {
     background: #218838;
 }
 
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 100px; /* Ajusta el texto hacia arriba en móviles */
+        width: 90%; /* Mayor ancho en móviles */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem; /* Tamaño de la letra del título para móviles */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; /* Tamaño de la letra del párrafo para móviles */
+    }
 }
-
-.carousel-btn.prev {
-    left: 10px;
-}
-
-.carousel-btn.next {
-    right: 10px;
-}
-
-
-.font-large { font-size: 30px; font-family: 'Arial', sans-serif; }
-.font-medium { font-size: 30px; font-family: 'Georgia', serif; }
-.font-small { font-size: 30px; font-family: 'Courier New', monospace; }
-.font-extra-small { font-size: 30px; font-family: 'Tahoma', sans-serif; }
-
-
-
-.bg-light-blue { background-color: #83c9e0; }
-.bg-light-green { background-color: #90ee90; }
-.bg-light-yellow { background-color: #ffeb3b; }
-.bg-light-pink { background-color: #ffcccb; }
-.bg-light-purple { background-color: #acace7; }
-.bg-light-orange { background-color: #ffcc80; }
-
-
-.bordered { border: 1px solid #ccc; }
-.bordered2 { border: 1px dashed #bbb; }
