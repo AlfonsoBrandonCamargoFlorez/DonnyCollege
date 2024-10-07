@@ -11,26 +11,37 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-between align-items-center fixed-top" style="height: 10vh; background: #333; color: aliceblue; padding: 0 20px;">
-        <div class="d-flex align-items-center">
-            <img src="img/logo.gif" alt="Logo" style="height: 60px; margin-right: 10px;"> <!-- Cambia la ruta de la imagen -->
-            <h1 class="m-0">Dany College</h1>
-        </div>
-        <nav class="nav">
-            <a class="nav-link text-light" href="#exposiciones">Home</a>
-            <a class="nav-link text-light" href="#quienes-somos">Quienes somos</a>
-            <a class="nav-link text-light" href="#informacion">Información</a>
-            <a class="nav-link text-light" href="#ubicacion">Dónde estamos</a>
-            <a class="nav-link text-light" href="#contactanos">Contáctanos</a>
+    <header>
+        <nav>
+            <div class="logo">Dany College</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienessomos">Quienes Somos?</a></li>
+                <li><a href="#materias">Materias</a></li>
+                <li><a href="#planes">Planes y Horarios</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+
+            <div class="mobile-menu">
+                <button class="close-btn" onclick="toggleMenu()">&#10006;</button>
+                <ul class="mobile-nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#quienessomos">Quienes Somos?</a></li>
+                    <li><a href="#materias">Materias</a></li>
+                    <li><a href="#planes">Planes y Horarios</a></li>
+                    <li><a href="#contactanos">Contacto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <main style="margin-top: 10vh; height: 90vh;">
+    <main style="margin-top: 10vh; height: auto;">
         <section id="exposiciones">
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-inner" style="height: 90vh;">
                     <div class="carousel-item active">
-                        <img src="img/asesorias.jpg" class="d-block w-100" alt="Imagen 1">
+                        <img src="img/asesorias.jpg" class="d-block w-100" alt="Asesorías">
                         <div class="carousel-caption">
                             <h5>Asesorías</h5>
                             <p>Brindamos acompañamiento y asesorías en tareas.</p>
@@ -38,42 +49,7 @@
                             <a href="#" class="btn share-btn">Compartir</a>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/maquetas.jpg" class="d-block w-100" alt="Imagen 2">
-                        <div class="carousel-caption">
-                            <h5>Maquetas</h5>
-                            <p>Ayudamos en la elaboración de maquetas para las diferentes materias.</p>
-                            <a href="mas-informacion.html" class="btn info-btn">Más Información</a>
-                            <a href="#" class="btn share-btn">Compartir</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/matematicas.jpg" class="d-block w-100" alt="Imagen 3">
-                        <div class="carousel-caption">
-                            <h5>Matemáticas</h5>
-                            <p>Nivelamos y mejoramos en matemáticas.</p>
-                            <a href="mas-informacion.html" class="btn info-btn">Más Información</a>
-                            <a href="#" class="btn share-btn">Compartir</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/english.jpg" class="d-block w-100" alt="Imagen 4">
-                        <div class="carousel-caption">
-                            <h5>Inglés</h5>
-                            <p>Brindamos apoyo en el aprendizaje del inglés.</p>
-                            <a href="mas-informacion.html" class="btn info-btn">Más Información</a>
-                            <a href="#" class="btn share-btn">Compartir</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/guarderiaa.jpg" class="d-block w-100" alt="Imagen 5">
-                        <div class="carousel-caption">
-                            <h5>Guardería</h5>
-                            <p>Servicio de guardería personalizada.</p>
-                            <a href="mas-informacion.html" class="btn info-btn">Más Información</a>
-                            <a href="#" class="btn share-btn">Compartir</a>
-                        </div>
-                    </div>
+                    <!-- Otras imágenes del carrusel -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -88,29 +64,61 @@
 
         <section id="quienes-somos" class="my-5">
             <h2>Quiénes somos</h2>
-            <p>Aquí va la información sobre quiénes somos.</p>
+            <p>Somos un equipo comprometido con la educación de nuestros estudiantes, ofreciendo asesorías personalizadas y recursos educativos para su desarrollo.</p>
         </section>
 
         <section id="informacion" class="my-5">
             <h2>Información</h2>
-            <p>Aquí va la información sobre nuestros horarios.</p>
+            <p>Nuestros horarios son flexibles y adaptados a las necesidades de los estudiantes. Consulta con nosotros para más detalles.</p>
         </section>
 
         <section id="ubicacion" class="my-5">
             <h2>Dónde estamos</h2>
-            <p>Aquí va la información sobre nuestra ubicación.</p>
+            <p>Estamos ubicados en [Tu dirección aquí]. Visítanos para conocer más sobre nuestros servicios.</p>
         </section>
 
         <section id="contactanos" class="my-5">
             <h2>Contáctanos</h2>
             <p>Número de teléfono: [Tu número aquí]</p>
             <p>Correo electrónico: [Tu correo aquí]</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+
+        <section id="testimonios" class="my-5">
+            <h2>Testimonios</h2>
+            <p>"La asesoría en Dany College ha sido invaluable para el progreso académico de mis hijos." - Padre de familia</p>
+            <p>"He mejorado mucho en matemáticas gracias a su apoyo." - Estudiante</p>
+        </section>
+
+        <section id="blog" class="my-5">
+            <h2>Blog</h2>
+            <p>Visita nuestro <a href="blog.html">blog</a> para leer artículos sobre educación, consejos de estudio y más.</p>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>

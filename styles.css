@@ -1,36 +1,168 @@
 body {
     text-align: center;
-    background-color: rgb(127, 148, 166); /* Cambia esto al color que prefieras */
+    background-color: rgb(127, 148, 166);
 }
 
+/* Estilo para el header */
 header {
-    z-index: 1030; /* Asegura que el encabezado esté por encima del contenido */
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de menú para móviles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #cfebdc;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Ocultar el menú móvil por defecto */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    padding: 20px;
+}
+
+/* Menú activo */
+.mobile-menu.active {
+    display: block;
+    transform: translateX(0);
+}
+
+/* Estilos para el botón de cerrar */
+.close-btn {
+    background: #eea29b;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para los enlaces del menú móvil */
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav-links li {
+    margin: 1rem 0;
+}
+
+.mobile-nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    background: #f1f1f1;
+}
+
+/* Ocultar nav-links en móviles y mostrar menú */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding-top: 4rem;
 }
 
 .carousel-item img {
     width: 100%;
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-height: 90vh; /* Establece una altura máxima para el carrusel */
-    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortes */
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
 }
 
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.347); /* Fondo oscuro con transparencia */
-    padding: 25px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    position: absolute; /* Asegura que se posicione correctamente */
-    left: 50%; /* Centra el fondo */
-    transform: translateX(-50%); /* Ajusta la posición */
-    width: 60%; /* Asegúrate de que sea del ancho deseado */
-    bottom: 150px; /* Ajusta este valor para mover el texto hacia arriba */
+    background-color: rgba(0, 0, 0, 0.347);
+    padding: 25px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    bottom: 150px;
 }
 
 .carousel-caption h5 {
-    font-size: 2rem; /* Tamaño de la letra del título */
+    font-size: 2rem;
 }
 
 .carousel-caption p {
-    font-size: 1.25rem; /* Tamaño de la letra del párrafo */
+    font-size: 1.25rem;
 }
 
 .btn {
@@ -62,15 +194,15 @@ header {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .carousel-caption {
-        bottom: 100px; /* Ajusta el texto hacia arriba en móviles */
-        width: 90%; /* Mayor ancho en móviles */
+        bottom: 100px;
+        width: 90%;
     }
 
     .carousel-caption h5 {
-        font-size: 1.5rem; /* Tamaño de la letra del título para móviles */
+        font-size: 1.5rem;
     }
 
     .carousel-caption p {
-        font-size: 1rem; /* Tamaño de la letra del párrafo para móviles */
+        font-size: 1rem;
     }
 }
