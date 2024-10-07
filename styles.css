@@ -191,6 +191,29 @@ main {
     background: #218838;
 }
 
+/* Estilo para los enlaces del menú */
+.nav-links a,
+.mobile-nav-links a {
+    color: #2c4662; /* Color inicial */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Color cuando pasas el mouse por encima */
+.nav-links a:hover,
+.mobile-nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Color más claro al pasar el mouse */
+    color: #000; /* Color del texto al pasar el mouse */
+}
+
+/* Color cuando se hace clic */
+.nav-links a:active,
+.mobile-nav-links a:active {
+    background-color: rgba(255, 255, 255, 0.5); /* Color más oscuro al hacer clic */
+    color: #000; /* Color del texto al hacer clic */
+}
+
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .carousel-caption {
