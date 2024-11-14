@@ -132,16 +132,7 @@ nav {
     background: #f1f1f1; /* Color de fondo suave en hover */
 }
 
-/* Ocultar nav-links en móviles y mostrar menú */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
 
-    .menu-toggle {
-        display: block;
-    }
-}
 /* Estilo para el contenido principal */
 main {
     padding-top: 4rem; /* Ajusta este valor para que coincida con la altura del header */
@@ -427,4 +418,21 @@ footer {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Ocultar nav-links en móviles y mostrar menú */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .visit-info {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos en el eje horizontal */
+    }
+
 }
