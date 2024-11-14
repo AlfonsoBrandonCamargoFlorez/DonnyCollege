@@ -430,6 +430,8 @@ footer {
     text-decoration: underline;
 }
 
+
+
 /* Ocultar nav-links en móviles y mostrar menú */
 @media (max-width: 768px) {
     .nav-links {

@@ -14,14 +14,15 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Educación con amor y diversión.</div>
+            <div class="logo">Gimnasio Colegio Sexto</div>
             <ul class="nav-links">
                 <li><a href="#Servicios">Servicios</a></li>
                 <li><a href="#somos">Quienes Somos?</a></li>
 
 
                 <!-- <li><a href="#noticias">Noticias</a></li> -->
-                <li><a href="#plan-your-visit">Contacto</a></li>
+                <li><a href="#plan-your-visit">Informacion</a></li>
+                <li><a href="#contactanos">Contactanos</a></li>
             </ul>
             <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button> <!-- Menú Toggle -->
 
@@ -33,7 +34,8 @@
                     <li><a href="#somos">Quienes Somos?</a></li>
 
                     <!-- <li><a href="#noticias">Noticias</a></li> -->
-                    <li><a href="#plan-your-visit">Contacto</a></li>
+                    <li><a href="#plan-your-visit">Informacion</a></li>
+                    <li><a href="#contactanos">Contactanos</a></li>
                 </ul>
             </div>
     </header>
@@ -227,7 +229,7 @@
             <!-- Aquí sigue el resto del contenido como exposiciones y noticias -->
         </section>
         <section id="plan-your-visit">
-            <h2>Informacion de Contacto</h2>
+            <h2>Informacion</h2>
             <div class="visit-info">
                 <div class="visit-item">
                     <h2>Nuestros Horarios</h2>
@@ -258,6 +260,36 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+        <section id="contactanos">
+            <div class="container">
+                <h2>Formulario de Contacto</h2>
+                <form id="contact-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+
+                    <!-- Contenedor para agregar los niños -->
+                    <div id="children-container"></div>
+
+                    <!-- Botón para agregar un nuevo niño -->
+                    <button type="button" id="add-child-btn">Agregar Estudiante</button>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
             </div>
         </section>
 
