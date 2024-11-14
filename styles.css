@@ -1,6 +1,15 @@
+/* styles.css */
+
+/* Reset básico para márgenes y rellenos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    text-align: center;
-    background-color: rgb(127, 148, 166);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 /* Estilo para el header */
@@ -8,11 +17,11 @@ header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
-    position: fixed;
+    position: fixed; /* Fija el header en la parte superior */
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Asegura que el header cubra todo el ancho */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
 nav {
@@ -53,26 +62,26 @@ nav {
     display: none;
     background: none;
     border: none;
-    color: #cfebdc;
+    color: #cfebdc; /* Cambiar a un color oscuro para mejor contraste */
     font-size: 2rem;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px; /* Añadir algo de espacio alrededor del botón */
 }
 
 /* Ocultar el menú móvil por defecto */
 .mobile-menu {
     display: none;
-    position: fixed;
+    position: fixed; /* Cambiar a fixed para que siempre esté visible en la pantalla */
     top: 0;
     right: 0;
     width: 250px;
     height: 100vh;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #fff; /* Fondo blanco para el menú */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave para un efecto sutil */
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%);
-    padding: 20px;
+    padding: 20px; /* Añadir padding para un espaciado interior más agradable */
 }
 
 /* Menú activo */
@@ -83,17 +92,17 @@ nav {
 
 /* Estilos para el botón de cerrar */
 .close-btn {
-    background: #eea29b;
+    background: #eea29b; /* Color llamativo pero elegante */
     color: #fff;
     border: none;
     font-size: 1rem;
     cursor: pointer;
     position: absolute;
-    top: 5px;
-    right: 5px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    top: 5px; /* Espacio desde el borde superior */
+    right: 5px; /* Espacio desde el borde derecho */
+    border-radius: 50%; /* Hacer el botón redondeado */
+    width: 30px; /* Tamaño del botón */
+    height: 30px; /* Tamaño del botón */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,17 +119,17 @@ nav {
 }
 
 .mobile-nav-links a {
-    color: #333;
+    color: #333; /* Color de texto oscuro para contraste */
     text-decoration: none;
     font-size: 1.2rem;
     display: block;
     padding: 1rem;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 5px; /* Bordes redondeados para un toque suave */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
 }
 
 .mobile-nav-links a:hover {
-    background: #f1f1f1;
+    background: #f1f1f1; /* Color de fondo suave en hover */
 }
 
 /* Ocultar nav-links en móviles y mostrar menú */
@@ -133,46 +142,87 @@ nav {
         display: block;
     }
 }
-
 /* Estilo para el contenido principal */
 main {
-    padding-top: 4rem;
+    padding-top: 4rem; /* Ajusta este valor para que coincida con la altura del header */
 }
 
-.carousel-item img {
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100vw;
+    height: 93vh;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
     width: 100%;
-    height: auto;
-    max-height: 90vh;
-    object-fit: contain;
+    height: 100%;
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.347);
-    padding: 25px;
-    border-radius: 10px;
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-text {
     position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    bottom: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
 }
 
-.carousel-caption h5 {
-    font-size: 2rem;
+.carousel-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
 }
 
-.carousel-caption p {
-    font-size: 1.25rem;
+.carousel-text p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.carousel-buttons {
+    margin-top: 10px;
 }
 
 .btn {
+    display: inline-block;
     margin: 0 5px;
     padding: 10px 20px;
     font-size: 1rem;
+    text-decoration: none;
     color: #fff;
     background: #333;
     border-radius: 5px;
     transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #555;
 }
 
 .info-btn {
@@ -191,41 +241,166 @@ main {
     background: #218838;
 }
 
-/* Estilo para los enlaces del menú */
-.nav-links a,
-.mobile-nav-links a {
-    color: #2c4662; /* Color inicial */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.destacados, .exposiciones, .noticias {
+    margin-bottom: 2rem;
+}
+
+.destacados {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.titulo-destacados {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.somos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.coleccion-item {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+#plan-your-visit {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.visit-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.visit-item {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.visit-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.visit-item p {
+    margin: 5px 0;
+}
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background: #fff;
+}
+
+.card-back {
+    background: #f4f4f4;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.card-back h3 {
+    margin-bottom: 0.5rem; /* Ajusta el espacio debajo del título */
+}
+
+.card-back p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}
+
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.footer-links a {
+    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.3s, color 0.3s; /* Transiciones suaves */
 }
 
-/* Color cuando pasas el mouse por encima */
-.nav-links a:hover,
-.mobile-nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Color más claro al pasar el mouse */
-    color: #000; /* Color del texto al pasar el mouse */
-}
-
-/* Color cuando se hace clic */
-.nav-links a:active,
-.mobile-nav-links a:active {
-    background-color: rgba(255, 255, 255, 0.5); /* Color más oscuro al hacer clic */
-    color: #000; /* Color del texto al hacer clic */
-}
-
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .carousel-caption {
-        bottom: 100px;
-        width: 90%;
-    }
-
-    .carousel-caption h5 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem;
-    }
+.footer-links a:hover {
+    text-decoration: underline;
 }
