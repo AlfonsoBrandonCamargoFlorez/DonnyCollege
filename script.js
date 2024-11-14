@@ -1,6 +1,6 @@
 // script.js
 
-// Manejo del carrusel de imágenes
+// Manejo del carrusel de imágenes (no es necesario modificarlo aquí si ya funciona correctamente)
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-images .carousel-slide');
 const totalImages = images.length;
@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
     setInterval(() => moveSlide(1), 3000); // Cambia la imagen cada 3 segundos
 });
-let childCount = 0; // Para llevar el conteo de los niños
+
+// Contador para los niños
+let childCount = 0; 
 
 // Función para agregar un niño
 document.getElementById('add-child-btn').addEventListener('click', function () {
@@ -101,7 +103,6 @@ function addService(childId) {
         </select>
         <button type="button" class="remove-service-btn" onclick="removeService(this)">Eliminar Servicio</button>
     `;
-
     childServicesContainer.appendChild(newServiceForm);
 }
 
@@ -121,7 +122,42 @@ function removeChildForm(button) {
 // Enviar el formulario de contacto
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    alert("Formulario enviado correctamente!");
-    // Aquí puedes agregar el código para enviar los datos a tu servidor
-});
 
+    // Recoger los datos del formulario principal
+    let message = "Información del formulario:\n";
+
+    // Obtener los datos de los campos del formulario principal
+    const fullName = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const userMessage = document.getElementById('message').value;
+
+    // Agregar los datos al mensaje
+    message += `\nNombre completo: ${fullName}\n`;
+    message += `Teléfono: ${phone}\n`;
+    message += `Correo electrónico: ${email}\n`;
+    message += `Mensaje: ${userMessage}\n`;
+
+    // Recolectar datos de los niños (si hay niños añadidos)
+    const children = document.querySelectorAll('.child-form');
+    children.forEach((child, index) => {
+        const childName = child.querySelector(`#child-name-${index}`).value;
+        const childAge = child.querySelector(`#child-age-${index}`).value;
+        message += `\nEstudiante ${index + 1}:\n`;
+        message += `Nombre: ${childName}\nEdad: ${childAge}\nServicios de interés: `;
+
+        const services = child.querySelectorAll(`#child-service-${index}-1, #child-service-${index}-2, #child-service-${index}-3, #child-service-${index}-4, #child-service-${index}-5`);
+        const serviceNames = Array.from(services).map(service => service.value).join(', ');
+        message += serviceNames + "\n";
+    });
+
+    // Crear el enlace de WhatsApp
+    const phoneNumber = "+573162488863";  // Tu número de WhatsApp con código de país
+    const encodedMessage = encodeURIComponent(message);  // Codificar el mensaje para usarlo en una URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Redirigir a WhatsApp con el mensaje
+    window.open(whatsappUrl, "_blank");
+
+    alert("Formulario enviado correctamente a WhatsApp!");
+});
