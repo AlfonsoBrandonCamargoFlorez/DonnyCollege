@@ -319,9 +319,12 @@ main {
 
 .sabados {
     margin: 0 20px;
+    font-size: 1.2em;
 }
 .lunes {
     margin: 0 20px;
+    font-size: 1.2em;
+    
 }
 
 .visit-item h3 {
