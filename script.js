@@ -1,5 +1,6 @@
 // script.js
 
+// Manejo del carrusel de imágenes
 let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-images .carousel-slide');
 const totalImages = images.length;
@@ -25,7 +26,10 @@ function toggleMenu() {
     mobileMenu.classList.toggle('active');
 }
 
+// Ejecuta las funciones después de que el contenido del DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
     setInterval(() => moveSlide(1), 3000); // Cambia la imagen cada 3 segundos
 });
+
+

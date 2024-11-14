@@ -299,10 +299,15 @@ main {
     text-align: center;
 }
 
+#plan-your-visit h2 {
+    font-size: 2.3rem; /* Aumenta el tamaño de la fuente a tu preferencia */
+    font-weight: bold; /* Si también deseas hacerlo más destacado */
+    margin-bottom: 20px; /* Puedes ajustar el espacio debajo del título */
+}
+
 .visit-info {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-around;    
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -311,6 +316,14 @@ main {
 .visit-item {
     flex: 1;
     margin: 0 20px;
+}
+.horarios {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
 }
 
 .visit-item h3 {
@@ -321,6 +334,17 @@ main {
 .visit-item p {
     margin: 5px 0;
 }
+
+.map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
 
 
 .card {
